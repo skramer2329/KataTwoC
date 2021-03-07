@@ -4,34 +4,41 @@
 
 //Create a new list
 void createList(node** head) {
-
+	*head = NULL;
 }
 //Add to beginning of list
-void addBegin(node** head) {
-
+void addBegin(node** head, node* new_node) {
+	
 }
 //Add to end of list
-void addEnd(node** head) {
+void addEnd(node** head, node* new_node) {
 
 }
 //Remove from beginning of list and return removed element
-void removeBegin(node** head) {
+node* removeBegin(node** head) {
+	node* tmp = head;
+	head = (*head)->next;
 
+	return tmp;
 }
 //Remove from end of list and return removed element
-void removeEnd(node** head) {
+node* removeEnd(node** head) {
 
 }
 //Print list
 void print(node* head) {
-
+	while (head) {
+		printf("Data in node: %d\n", head->data);
+		head = head->next;
+	}
 }
 //Find certain data in list and return data
-void find(node** head) {
-
+int find(node** head, const int data) {
+	while (head) {
+		if (data == (*head)->data)
+			return (*head)->data;
+		head = (*head)->next;
+	}
+	return NULL;
 }
 
-void addEnd(node** head)
-{
-
-}
