@@ -1,15 +1,15 @@
 #pragma once
 
-typedef struct{
+typedef struct node{
 	int data; 
-	node* next;
+	struct node* next;
 }node;
 //Create a new list
 void createList(node* *head);
 //Add to beginning of list
-void addBegin(node* *head, node new_node);
+void addBegin(node* *head, node* new_node);
 //Add to end of list
-void addEnd(node* *head, node new_node);
+void addEnd(node* *head, node* new_node);
 //Remove from beginning of list and return removed element
 node* removeBegin(node* *head);
 //Remove from end of list and return removed element

@@ -1,0 +1,16 @@
+I wasn't sure how to create a makefile in visual studio so I decided to just include it a text file.
+
+
+main: main.o list.o
+        gcc -Wall main.o list.o -o main
+
+main.o: main.c list.h
+        gcc -Wall -c main.c
+
+list.o: list.c list.h
+        gcc -Wall -c list.c
+
+clean:
+        rm main
+        rm main.o
+        rm.list.o
