@@ -15,14 +15,21 @@ int main(int args, char* argv[]) {
 		//find
 
 	node* head = (node*)malloc(sizeof(node));
-	head->data = 1;
+
+
+	createList(&head);
+
+
+	for (int i = 0; i < 10; i++) {
+		node* new_node = (node*)malloc(sizeof(node));
+		new_node->data = i;
+		new_node->next = NULL;
+		addBegin(&head, new_node);
+	}
+	//node* end_node = (node*)malloc(sizeof(node));
+	//end_node->data = 1000;
+	//addEnd(&head, end_node);
 	
-	createList(head);
 
-	node* new_node = (node*)malloc(sizeof(node));
-	new_node->data = 5;
-
-	addBegin(&head, new_node);
-
-	print(&head);
+	print(head);
 }

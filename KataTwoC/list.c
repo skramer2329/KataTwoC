@@ -25,6 +25,9 @@ void addEnd(node** head, node* new_node) {
 }
 //Remove from beginning of list and return removed element
 node* removeBegin(node** head) {
+    
+    if (head == NULL)
+        return NULL;
     struct node* tmp = *head;
     *head = (*head)->next;
 
@@ -32,9 +35,13 @@ node* removeBegin(node** head) {
 }
 //Remove from end of list and return removed element
 node* removeEnd(node** head) {
-    struct node* tmp;
+    struct node* tmp = NULL;
     struct node* i;
     struct node* lag = NULL;
+    
+    if (head == NULL)
+        return NULL;
+
     for (i = *head; i != NULL; i = i->next) {
         if (i->next == NULL) {
             tmp = i;
